@@ -102,3 +102,26 @@ questions.forEach((question) => {
     question.classList.toggle("active");
   });
 });
+
+/* ----- Submit  ----- */
+const form = document.querySelector(".contact-us__form");
+
+const emailInput = document.querySelector(".contact-us__form__email");
+
+const errorIcon = document.querySelector(".fa-exclamation-circle");
+
+const errorMessage = document.querySelector(".contact-us__form-error-message");
+
+const emailExpression = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (!emailExpression.test(emailInput.value)) {
+    errorIcon.classList.add("error");
+    errorMessage.classList.add("error");
+  } else {
+    errorIcon.classList.remove("error");
+    errorMessage.classList.remove("error");
+  }
+});

@@ -96,6 +96,11 @@ a.header__nav-list-link {
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: 2px;
+  transition: color 0.4s;
+}
+
+a.header__nav-list-link:hover {
+  color: var(--soft-red-color);
 }
 
 a.header__nav-list-link--button {
@@ -190,6 +195,15 @@ a.header__nav-list-link--button {
   background-color: var(--soft-blue-color);
   -webkit-box-shadow: 0px 4px 17px -1px rgba(83, 104, 223, 0.3);
   box-shadow: 0px 4px 17px -1px rgba(83, 104, 223, 0.3);
+  border: 3px solid transparent;
+  transition: all 0.4s;
+  z-index: 3;
+}
+
+.btn.btn--blue:hover {
+  color: var(--soft-blue-color);
+  background-color: var(--white-color);
+  border-color: var(--soft-blue-color);
 }
 
 .btn--light {
@@ -197,6 +211,12 @@ a.header__nav-list-link--button {
   background-color: var(--very-gray);
   -webkit-box-shadow: 0px 4px 17px -1px rgba(83, 104, 223, 0.3);
   box-shadow: 0px 4px 17px -1px rgba(83, 104, 223, 0.3);
+  border: 3px solid transparent;
+  transition: all 0.4s;
+}
+
+.btn--light:hover {
+  border-color: var(--very-dark);
 }
 
 .hero__btn-left {
@@ -236,6 +256,10 @@ a.header__nav-list-link--button {
 .features__tabs-tab-link {
   text-decoration: none;
   color: var(--grayish-blue-color);
+}
+
+.features__tabs-tab-link:hover {
+  color: var(--soft-red-color);
 }
 
 .features__tabs-tab-link.active {
@@ -365,6 +389,7 @@ a.header__nav-list-link--button {
   align-items: center;
   flex-direction: column;
 }
+
 .extension__cards .extension__card {
   margin-bottom: 4rem;
   display: flex;
@@ -396,7 +421,7 @@ a.header__nav-list-link--button {
 }
 
 .extension__card__button {
-  padding: 0 1rem;
+  padding: 0;
   width: 100%;
 }
 
@@ -417,7 +442,8 @@ a.header__nav-list-link--button {
 /* ----- FAQ ----- */
 
 .faq {
-  padding: 3rem 0 9rem;
+  margin-top: 10rem;
+  padding: 0 0 9rem;
   position: relative;
 }
 
@@ -493,6 +519,11 @@ a.header__nav-list-link--button {
   font-size: 1.1rem;
   font-weight: 400;
   color: var(--very-dark-blue);
+  transition: color 0.4s;
+}
+
+.question__text:hover {
+  color: var(--soft-red-color);
 }
 
 .answer__description {
@@ -555,6 +586,7 @@ a.header__nav-list-link--button {
   font-size: 1rem;
   margin-bottom: 1rem;
   background-color: var(--white-color);
+  width: 100%;
 }
 
 .contact-us__form__email::placeholder {
@@ -570,6 +602,54 @@ a.header__nav-list-link--button {
   color: var(--white-color) !important;
   background-color: var(--soft-red-color);
   display: inline-block;
+  border: 3px solid var(--soft-red-color);
+  transition: all 0.4s;
+}
+
+button.btn--orange:hover {
+  color: var(--soft-red-color) !important;
+  background-color: var(--white-color);
+}
+
+.contact-us__form-control {
+  position: relative;
+}
+
+.fa-exclamation-circle {
+  color: var(--soft-red-color);
+  right: 1rem;
+  top: 0.8rem;
+  position: absolute;
+  font-size: 1.5rem;
+  display: none;
+}
+
+.fa-exclamation-circle.error {
+  display: block;
+}
+
+.contact-us__form-error-message {
+  display: inline-block;
+  right: 0rem;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  background-color: var(--soft-red-color);
+  color: var(--very-gray-2);
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  font-size: 0.7rem;
+  font-style: italic;
+  padding: 0.3rem 1rem;
+  display: none;
+}
+
+.contact-us__form-error-message.error {
+  display: block;
+}
+
+.contact-us__form__submit {
+  margin-top: 30px;
 }
 
 /* ---- footer ----- */
@@ -607,6 +687,11 @@ a.header__nav-list-link--button {
   margin-bottom: 2rem;
   font-weight: 300;
   letter-spacing: 2px;
+  transition: color 0.4s;
+}
+
+.footer__menu_list a:hover {
+  color: var(--soft-red-color);
 }
 
 .footer__social {
@@ -616,8 +701,12 @@ a.header__nav-list-link--button {
   width: 90px;
 }
 
-.footer__social img {
-  width: 30px;
+.footer__social svg path {
+  transition: fill 0.4s;
+}
+
+.footer__social svg path:hover {
+  fill: var(--soft-red-color);
 }
 
 /* ------- MEDIA FOR MOBILE --------- */
@@ -747,6 +836,13 @@ a.header__nav-list-link--button {
     color: var(--white-color) !important;
     background-color: var(--soft-red-color);
     display: inline-block;
+    border: 3px solid var(--soft-red-color);
+    transition: all 0.4s;
+  }
+
+  a.header__nav-list-link--button.btn--orange:hover {
+    color: var(--soft-red-color) !important;
+    background-color: var(--white-color);
   }
 
   .header__nav-social {
@@ -940,12 +1036,14 @@ a.header__nav-list-link--button {
   .contact-us__form__email {
     padding: 1rem;
     width: 400px;
+    border: 3px solid transparent;
+    position: relative;
   }
 
   .contact-us__form__submit {
     margin-top: -15px;
     margin-left: 10px;
-    padding: 1.1rem;
+    padding: 0.9888rem;
   }
 
   .contact-us__title {
