@@ -28,6 +28,8 @@ bookmarking.addEventListener("click", (event) => {
 
   const tabLinks = document.querySelectorAll(".features__tabs-tab-link");
 
+  const tabItems = document.querySelectorAll(".features__tabs-item");
+
   const tabsContent = document.querySelectorAll(".features__tab-content");
 
   tabLinks.forEach((tab) => tab.classList.remove("active"));
@@ -36,7 +38,11 @@ bookmarking.addEventListener("click", (event) => {
 
   tabsContent.forEach((tabC) => tabC.classList.remove("active"));
 
+  tabItems.forEach((tbi) => tbi.classList.remove("active"));
+
   bookmarkingTab.classList.add("active");
+
+  event.target.parentElement.className += " active";
 });
 
 //searching
@@ -45,15 +51,23 @@ searching.addEventListener("click", (event) => {
 
   const tabLinks = document.querySelectorAll(".features__tabs-tab-link");
 
+  const tabItems = document.querySelectorAll(".features__tabs-item");
+
   const tabsContent = document.querySelectorAll(".features__tab-content");
 
   tabLinks.forEach((tab) => tab.classList.remove("active"));
 
   event.currentTarget.classList.add("active");
 
+  event.target.parentElement.className.replace("active", "");
+
   tabsContent.forEach((tabC) => tabC.classList.remove("active"));
 
+  tabItems.forEach((tbi) => tbi.classList.remove("active"));
+
   searchingTab.classList.add("active");
+
+  event.target.parentElement.className += " active";
 });
 
 //sharing
@@ -62,6 +76,8 @@ sharing.addEventListener("click", (event) => {
 
   const tabLinks = document.querySelectorAll(".features__tabs-tab-link");
 
+  const tabItems = document.querySelectorAll(".features__tabs-item");
+
   const tabsContent = document.querySelectorAll(".features__tab-content");
 
   tabLinks.forEach((tab) => tab.classList.remove("active"));
@@ -69,5 +85,20 @@ sharing.addEventListener("click", (event) => {
   event.currentTarget.classList.add("active");
 
   tabsContent.forEach((tabC) => tabC.classList.remove("active"));
+
+  tabItems.forEach((tbi) => tbi.classList.remove("active"));
+
   sharingTab.classList.add("active");
+
+  event.target.parentElement.className += " active";
+});
+
+/* ----- FAQ Accordion ---- */
+const questions = document.querySelectorAll(".question");
+
+questions.forEach((question) => {
+  question.addEventListener("click", (event) => {
+    question.nextElementSibling.classList.toggle("active");
+    question.classList.toggle("active");
+  });
 });
